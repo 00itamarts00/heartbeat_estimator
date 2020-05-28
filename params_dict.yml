@@ -1,0 +1,30 @@
+recording_cams: ['wearable_ecam_right', 'wearable_ecam_left', 'wearable_ecam_far_right']
+#recording_cams: ['wearable_ecam_right']
+
+
+source:
+  recordings_path: '/hfa/ramon/users/itsayag/HBET/RECORDINGS'
+  recordings_id: '9cbce295-624e-45f9-add3-6bf5f2727d5a'
+frame:
+  type: 'gaussian'  # 'gaussian'
+  level: 3
+buffer:
+  max_size: 300
+  minimum_gl_th: 50  # 0.5 - 5
+  gl_quantile_th: []  # 0.5 - 5
+  image_type: 'downscale'   # (raw)
+  std_mask_limits: [0.5, 5]
+#  std_mask_limits: [2, 10]
+  fft:
+    type: 'window'
+    threshold: [0.5, 3.5]   #Hz
+    amplification_factor: 50
+hbet:
+  valid_hb: [50,150]
+  ecam_roi:
+    wearable_ecam_right: [[0,0], [0,0]]      # bottom-left, top-right
+    wearable_ecam_left: [[0,0], [0,0]]            # bottom-left, top-right
+    wearable_ecam_far_right: [[0,0], [0,0]]       # bottom-left, top-right
+    earable_ecam_far_left: [[0,0], [0,0]]         # bottom-left, top-right
+
+
